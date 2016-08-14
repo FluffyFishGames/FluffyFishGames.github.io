@@ -1,0 +1,264 @@
+
+<!DOCTYPE html>
+<html ng-app="younow" ng-controller="AppCtrl" lang="en">
+	<head>
+		<title ng-bind="pageTitle || 'YouNow - Broadcast Live'">YouNow - Broadcast Live</title>
+		<base href="/">
+		<meta charset="utf-8"><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"VgECUl9WGwoIUFlVBgA="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o||e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e,n){function r(t){try{s.console&&console.log(t)}catch(e){}}var o,i=t("ee"),a=t(15),s={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(s.console=!0,o.indexOf("dev")!==-1&&(s.dev=!0),o.indexOf("nr_dev")!==-1&&(s.nrDev=!0))}catch(c){}s.nrDev&&i.on("internal-error",function(t){r(t.stack)}),s.dev&&i.on("fn-err",function(t,e,n){r(n.stack)}),s.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(s,function(t,e){return t}).join(", ")))},{}],2:[function(t,e,n){function r(t,e,n,r,o){try{d?d-=1:i("err",[o||new UncaughtException(t,e,n)])}catch(s){try{i("ierr",[s,(new Date).getTime(),!0])}catch(c){}}return"function"==typeof f&&f.apply(this,a(arguments))}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function o(t){i("err",[t,(new Date).getTime()])}var i=t("handle"),a=t(16),s=t("ee"),c=t("loader"),f=window.onerror,u=!1,d=0;c.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(l){"stack"in l&&(t(8),t(7),"addEventListener"in window&&t(5),c.xhrWrappable&&t(9),u=!0)}s.on("fn-start",function(t,e,n){u&&(d+=1)}),s.on("fn-err",function(t,e,n){u&&(this.thrown=!0,o(n))}),s.on("fn-end",function(){u&&!this.thrown&&d>0&&(d-=1)}),s.on("internal-error",function(t){i("ierr",[t,(new Date).getTime(),!0])})},{}],3:[function(t,e,n){t("loader").features.ins=!0},{}],4:[function(t,e,n){function r(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var o=t("ee"),i=t("handle"),a=t(8),s=t(7),c="learResourceTimings",f="addEventListener",u="resourcetimingbufferfull",d="bstResource",l="resource",p="-start",h="-end",m="fn"+p,w="fn"+h,v="bstTimer",y="pushState";t("loader").features.stn=!0,t(6);var g=NREUM.o.EV;o.on(m,function(t,e){var n=t[0];n instanceof g&&(this.bstStart=Date.now())}),o.on(w,function(t,e){var n=t[0];n instanceof g&&i("bst",[n,e,this.bstStart,Date.now()])}),a.on(m,function(t,e,n){this.bstStart=Date.now(),this.bstType=n}),a.on(w,function(t,e){i(v,[e,this.bstStart,Date.now(),this.bstType])}),s.on(m,function(){this.bstStart=Date.now()}),s.on(w,function(t,e){i(v,[e,this.bstStart,Date.now(),"requestAnimationFrame"])}),o.on(y+p,function(t){this.time=Date.now(),this.startPath=location.pathname+location.hash}),o.on(y+h,function(t){i("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),f in window.performance&&(window.performance["c"+c]?window.performance[f](u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["c"+c]()},!1):window.performance[f]("webkit"+u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["webkitC"+c]()},!1)),document[f]("scroll",r,!1),document[f]("keypress",r,!1),document[f]("click",r,!1)}},{}],5:[function(t,e,n){function r(t){for(var e=t;e&&!e.hasOwnProperty(u);)e=Object.getPrototypeOf(e);e&&o(e)}function o(t){s.inPlace(t,[u,d],"-",i)}function i(t,e){return t[1]}var a=t("ee").get("events"),s=t(17)(a),c=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";e.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(o(window),o(f.prototype)),a.on(u+"-start",function(t,e){if(t[1]){var n=t[1];if("function"==typeof n){var r=c(n,"nr@wrapped",function(){return s(n,"fn-",null,n.name||"anonymous")});this.wrapped=t[1]=r}else"function"==typeof n.handleEvent&&s.inPlace(n,["handleEvent"],"fn-")}}),a.on(d+"-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{}],6:[function(t,e,n){var r=t("ee").get("history"),o=t(17)(r);e.exports=r,o.inPlace(window.history,["pushState","replaceState"],"-")},{}],7:[function(t,e,n){var r=t("ee").get("raf"),o=t(17)(r),i="equestAnimationFrame";e.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],8:[function(t,e,n){function r(t,e,n){t[0]=a(t[0],"fn-",null,n)}function o(t,e,n){this.method=n,this.timerDuration="number"==typeof t[1]?t[1]:0,t[0]=a(t[0],"fn-",this,n)}var i=t("ee").get("timer"),a=t(17)(i),s="setTimeout",c="setInterval",f="clearTimeout",u="-start",d="-";e.exports=i,a.inPlace(window,[s,"setImmediate"],s+d),a.inPlace(window,[c],c+d),a.inPlace(window,[f,"clearImmediate"],f+d),i.on(c+u,r),i.on(s+u,o)},{}],9:[function(t,e,n){function r(t,e){d.inPlace(e,["onreadystatechange"],"fn-",s)}function o(){var t=this,e=u.context(t);t.readyState>3&&!e.resolved&&(e.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,w,"fn-",s)}function i(t){v.push(t),h&&(g=-g,b.data=g)}function a(){for(var t=0;t<v.length;t++)r([],v[t]);v.length&&(v=[])}function s(t,e){return e}function c(t,e){for(var n in t)e[n]=t[n];return e}t(5);var f=t("ee"),u=f.get("xhr"),d=t(17)(u),l=NREUM.o,p=l.XHR,h=l.MO,m="readystatechange",w=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],v=[];e.exports=u;var y=window.XMLHttpRequest=function(t){var e=new p(t);try{u.emit("new-xhr",[e],e),e.addEventListener(m,o,!1)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}return e};if(c(p,y),y.prototype=p.prototype,d.inPlace(y.prototype,["open","send"],"-xhr-",s),u.on("send-xhr-start",function(t,e){r(t,e),i(e)}),u.on("open-xhr-start",r),h){var g=1,b=document.createTextNode(g);new h(a).observe(b,{characterData:!0})}else f.on("fn-end",function(t){t[0]&&t[0].type===m||a()})},{}],10:[function(t,e,n){function r(t){var e=this.params,n=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<d;r++)t.removeEventListener(u[r],this.listener,!1);if(!e.aborted){if(n.duration=(new Date).getTime()-this.startTime,4===t.readyState){e.status=t.status;var i=o(t,this.lastSize);if(i&&(n.rxSize=i),this.sameOrigin){var a=t.getResponseHeader("X-NewRelic-App-Data");a&&(e.cat=a.split(", ").pop())}}else e.status=0;n.cbTime=this.cbTime,f.emit("xhr-done",[t],t),s("xhr",[e,n,this.startTime])}}}function o(t,e){var n=t.responseType;if("json"===n&&null!==e)return e;var r="arraybuffer"===n||"blob"===n||"json"===n?t.response:t.responseText;return h(r)}function i(t,e){var n=c(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}var a=t("loader");if(a.xhrWrappable){var s=t("handle"),c=t(11),f=t("ee"),u=["load","error","abort","timeout"],d=u.length,l=t("id"),p=t(14),h=t(13),m=window.XMLHttpRequest;a.features.xhr=!0,t(9),f.on("new-xhr",function(t){var e=this;e.totalCbs=0,e.called=0,e.cbTime=0,e.end=r,e.ended=!1,e.xhrGuids={},e.lastSize=null,p&&(p>34||p<10)||window.opera||t.addEventListener("progress",function(t){e.lastSize=t.loaded},!1)}),f.on("open-xhr-start",function(t){this.params={method:t[0]},i(this,t[1]),this.metrics={}}),f.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),f.on("send-xhr-start",function(t,e){var n=this.metrics,r=t[0],o=this;if(n&&r){var i=h(r);i&&(n.txSize=i)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof e.onload))&&o.end(e)}catch(n){try{f.emit("internal-error",[n])}catch(r){}}};for(var a=0;a<d;a++)e.addEventListener(u[a],this.listener,!1)}),f.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),f.on("xhr-load-added",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),f.on("xhr-load-removed",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),f.on("addEventListener-end",function(t,e){e instanceof m&&"load"===t[0]&&f.emit("xhr-load-added",[t[1],t[2]],e)}),f.on("removeEventListener-end",function(t,e){e instanceof m&&"load"===t[0]&&f.emit("xhr-load-removed",[t[1],t[2]],e)}),f.on("fn-start",function(t,e,n){e instanceof m&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),f.on("fn-end",function(t,e){this.xhrCbStart&&f.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}},{}],11:[function(t,e,n){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname);var i=!e.protocol||":"===e.protocol||e.protocol===n.protocol,a=e.hostname===document.domain&&e.port===n.port;return r.sameOrigin=i&&(!e.hostname||a),r}},{}],12:[function(t,e,n){function r(){}function o(t,e,n){return function(){return i(t,[(new Date).getTime()].concat(s(arguments)),e?null:this,n),e?void 0:this}}var i=t("handle"),a=t(15),s=t(16),c=t("ee").get("tracer"),f=NREUM;"undefined"==typeof window.newrelic&&(newrelic=f);var u=["setPageViewName","setCustomAttribute","finished","addToTrace","inlineHit"],d="api-",l=d+"ixn-";a(u,function(t,e){f[e]=o(d+e,!0,"api")}),f.addPageAction=o(d+"addPageAction",!0),e.exports=newrelic,f.interaction=function(){return(new r).get()};var p=r.prototype={createTracer:function(t,e){var n={},r=this,o="function"==typeof e;return i(l+"tracer",[Date.now(),t,n],r),function(){if(c.emit((o?"":"no-")+"fn-start",[Date.now(),r,o],n),o)try{return e.apply(this,arguments)}finally{c.emit("fn-end",[Date.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){p[e]=o(l+e)}),newrelic.noticeError=function(t){"string"==typeof t&&(t=new Error(t)),i("err",[t,(new Date).getTime()])}},{}],13:[function(t,e,n){e.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(e){return}}}},{}],14:[function(t,e,n){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&&(r=+o[1]),e.exports=r},{}],15:[function(t,e,n){function r(t,e){var n=[],r="",i=0;for(r in t)o.call(t,r)&&(n[i]=e(r,t[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],16:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(o<0?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=r},{}],17:[function(t,e,n){function r(t){return!(t&&"function"==typeof t&&t.apply&&!t[a])}var o=t("ee"),i=t(16),a="nr@original",s=Object.prototype.hasOwnProperty,c=!1;e.exports=function(t){function e(t,e,n,o){function nrWrapper(){var r,a,s,c;try{a=this,r=i(arguments),s="function"==typeof n?n(r,a):n||{}}catch(u){d([u,"",[r,a,o],s])}f(e+"start",[r,a,o],s);try{return c=t.apply(a,r)}catch(l){throw f(e+"err",[r,a,l],s),l}finally{f(e+"end",[r,a,c],s)}}return r(t)?t:(e||(e=""),nrWrapper[a]=t,u(t,nrWrapper),nrWrapper)}function n(t,n,o,i){o||(o="");var a,s,c,f="-"===o.charAt(0);for(c=0;c<n.length;c++)s=n[c],a=t[s],r(a)||(t[s]=e(a,f?s+o:o,i,s))}function f(e,n,r){if(!c){c=!0;try{t.emit(e,n,r)}catch(o){d([o,e,n,r])}c=!1}}function u(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){d([r])}for(var o in t)s.call(t,o)&&(e[o]=t[o]);return e}function d(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=o),e.inPlace=n,e.flag=a,e}},{}],ee:[function(t,e,n){function r(){}function o(t){function e(t){return t&&t instanceof r?t:t?s(t,a,i):i()}function n(n,r,o){t&&t(n,r,o);for(var i=e(o),a=l(n),s=a.length,c=0;c<s;c++)a[c].apply(i,r);var u=f[w[n]];return u&&u.push([v,n,r,i]),i}function d(t,e){m[t]=l(t).concat(e)}function l(t){return m[t]||[]}function p(t){return u[t]=u[t]||o(n)}function h(t,e){c(t,function(t,n){e=e||"feature",w[n]=e,e in f||(f[e]=[])})}var m={},w={},v={on:d,emit:n,get:p,listeners:l,context:e,buffer:h};return v}function i(){return new r}var a="nr@context",s=t("gos"),c=t(15),f={},u={},d=e.exports=o();d.backlog=f},{}],gos:[function(t,e,n){function r(t,e,n){if(o.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[e]=r,r}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){o.buffer([t],r),o.emit(t,e,n)}var o=t("ee").get("handle");e.exports=r,r.ee=o},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!g++){var t=y.info=NREUM.info,e=u.getElementsByTagName("script")[0];if(t&&t.licenseKey&&t.applicationID&&e){c(w,function(e,n){t[e]||(t[e]=n)});var n="https"===m.split(":")[0]||t.sslForHttp;y.proto=n?"https://":"http://",s("mark",["onload",a()],null,"api");var r=u.createElement("script");r.src=y.proto+t.agent,e.parentNode.insertBefore(r,e)}}}function o(){"complete"===u.readyState&&i()}function i(){s("mark",["domContent",a()],null,"api")}function a(){return(new Date).getTime()}var s=t("handle"),c=t(15),f=window,u=f.document,d="addEventListener",l="attachEvent",p=f.XMLHttpRequest,h=p&&p.prototype;NREUM.o={ST:setTimeout,CT:clearTimeout,XHR:p,REQ:f.Request,EV:f.Event,PR:f.Promise,MO:f.MutationObserver},t(12);var m=""+location,w={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-963.min.js"},v=p&&h&&h[d]&&!/CriOS/.test(navigator.userAgent),y=e.exports={offset:a(),origin:m,features:{},xhrWrappable:v};u[d]?(u[d]("DOMContentLoaded",i,!1),f[d]("load",r,!1)):(u[l]("onreadystatechange",o),f[l]("onload",r)),s("mark",["firstbyte",a()],null,"api");var g=0},{}]},{},["loader",2,10,4,3]);</script>
+
+		<meta name="description" content="Watch broadcasters, join a community, chat in real time, express your creativity" />
+		<link rel="canonical" href="https://www.younow.com" />
+		<meta name="fragment" content="!">
+
+		<meta name="msvalidate.01" content="FC72F7F99D5A1DECEAC96572125C939B" />
+
+		<meta property="og:title" content="YouNow - Broadcast Live" />
+		<meta property="og:description" content="Watch broadcasters, join a community, chat in real time, express your creativity" />
+		<meta property="og:url" content="https://www.younow.com" />
+		<meta property="og:image" content="" />
+		<meta property="og:type" content="website" />
+		<meta property="og:site_name" content="YouNow.com"/>
+		<meta property="fb:app_id" content="171373592926306"/>
+		<meta name="twitter:title" content="YouNow - Broadcast Live">
+		<meta name="twitter:description" content="Watch broadcasters, join a community, chat in real time, express your creativity">
+		<meta name="twitter:url" content="https://www.younow.com">
+		<meta name="twitter:image" content="">
+		<meta name="twitter:site" content="@younow">
+		<meta name="twitter:app:name:iphone" content="YouNow">
+		<meta name="twitter:app:id:iphone" content="471347413">
+		<meta name="twitter:app:url:ipad" content="younow://default">
+		<meta name="twitter:app:name:ipad" content="YouNow">
+		<meta name="twitter:app:id:ipad" content="471347413">
+		<meta name="twitter:app:url:ipad" content="younow://default">
+		<meta name="twitter:app:name:googleplay" content="YouNow">
+		<meta name="twitter:app:id:googleplay" content="younow.live">
+		<meta name="twitter:app:url:googleplay" content="younow://default">
+
+		
+
+		
+
+		
+
+		
+
+		
+
+		
+
+		
+
+		
+
+		<link rel="icon" type="image/vnd.microsoft.icon" href="https://cdn.younow.com/favicon.ico?v=2" />
+		<link rel="shortcut icon" type="image/x-icon" href="https://cdn.younow.com/favicon.ico?v=2" />
+		<link type="image/x-icon" rel="Shortcut Icon" href="https://cdn.younow.com/younow_icon.png?v=2">
+		<link type="image/png" rel="Shortcut Icon" href="https://cdn.younow.com/younow_icon.png?v=2">
+		<meta name="google-site-verification" content="5H0nH1UUiJdYACjVDNvAkMQYvWNh2yf1eyzUSH3iDgk" />
+		<meta name="google-site-verification" content="2NSHYsKh6hiEbuX8j_A4z4UD9E5zbX6yWYDX3ZkS7oY" />
+		<meta name="google-site-verification" content="d75mvBwa4LDyAPqaRodQnmqm_NzEe83nBH9q7377Pj0" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimal-ui">
+		<meta name="google" content="notranslate" />
+
+		<link rel="alternate" href="https://www.younow.com/ar" hreflang="ar" />
+		<link rel="alternate" href="https://www.younow.com/de" hreflang="de" />
+		<link rel="alternate" href="https://www.younow.com" hreflang="en" />
+		<link rel="alternate" href="https://www.younow.com/es" hreflang="es" />
+		<link rel="alternate" href="https://www.younow.com/fr" hreflang="fr" />
+		<link rel="alternate" href="https://www.younow.com/id" hreflang="id" />
+		<link rel="alternate" href="https://www.younow.com/pt" hreflang="pt" />
+		<link rel="alternate" href="https://www.younow.com/tr" hreflang="tr" />
+		
+
+		<!-- global Vars -->
+		<script>
+			var globalVars = {
+				'JS_VERSION': '4.36',
+				'CDN_BASE_URL': 'https://cdn.younow.com',
+				'pageLanguage': '',
+				'deepLink': 'younow://default'
+			};
+			var bootstrapConfig = {"ServerLocalBaseUrl":"https:\/\/www.younow.com","ServerCDNBaseUrl":"https:\/\/cdn.younow.com","ServerHomeBaseUrl":"https:\/\/www.younow.com\/","ServerSecureLocalBaseUrl":"https:\/\/www.younow.com","fbFriendReqUrl":"https:\/\/www.younow.com\/php\/api\/redirectFBFriendRequest","PostThumbUrl":"https:\/\/www.younow.com\/api\/addTempBroadcastThumb.php","TrackingHost":"https:\/\/data.younow.com\/","ServerRecommendationsBaseUrl":"https:\/\/www.younow.com","CheckLiveInfoInterval":5,"MinIOSAppVersion":"11.1.0","MinAndroidVersion":"11.3.0","MinIOSSysVersion":"7.0","MinAndroidSysVersion":"14.0","FlashCamBroadcastBuffer":0,"FlashCamPlaybackBuffer":2,"FlashCamAudioSamplingRate":22,"FlashCamKeyframe":24,"FlashCamFPS":12,"FlashCamQuality":80,"FlashCamFavorArea":0,"FlashCamBandwidthLimit":0,"FlashCamMinFPS":6,"AudioCodec":1,"FlashMicEncodeQuality":6,"AllowMultipleVoteInterval":3,"VideoSize":"592x444","ThumbSize":"148x111","BroadcastTitleCharMax":30,"BroadcastDescriptionCharMax":null,"coinsReferral":200,"channelLoadTimeout":14,"broadcasterPublishSettingsUpdateInterval":20,"ipCountryUrl":"http:\/\/api.ipinfodb.com\/v3\/ip-country\/?key=30c1f9851644b39c9083adb95f6a3fb4f9174ab6cf60af4c1102807fbf0361a2","FlaggingOptions":[{"id":0,"desc":"Offensive Conduct","broadcaster":1,"user":1},{"id":1,"desc":"Spamming","broadcaster":0,"user":1},{"id":2,"desc":"Nudity","broadcaster":1,"user":0},{"id":5,"desc":"User under 13","broadcaster":1,"user":1}],"BanningReasonsOptions":[{"id":0,"desc":"Offensive chat"},{"id":1,"desc":"Offensive broadcast"},{"id":2,"desc":"Explicit sexuality"},{"id":3,"desc":"Nudity"},{"id":4,"desc":"Spamming"},{"id":5,"desc":"Underage"},{"id":6,"desc":"Suicide"},{"id":7,"desc":"Self harm"},{"id":8,"desc":"Violence"}],"SuspendingReasonsOptions":[{"id":0,"desc":"Offensive chat"},{"id":1,"desc":"Offensive broadcast"},{"id":2,"desc":"Explicit sexuality"},{"id":3,"desc":"Nudity"},{"id":4,"desc":"Spamming"},{"id":6,"desc":"Suicide"},{"id":7,"desc":"Self harm"},{"id":8,"desc":"Violence"}],"TrackingPxl":"trpxl.gif","cookieDomain":".younow.com","HoursFromGMT":-4,"PromoteOwnFBTemplates":["LIVE on YouNow"],"PromoteOtherFBTemplates":["LIVE - {broadcaster_facebookFirstName} is broadcasting on YouNow"],"PromoteOwnTWTemplates":["\ud83d\udd34 LIVE on @YouNow - {broadcastLink}"],"PromoteOtherTWTemplates":["\ud83d\udd34 LIVE - {twitterHandle} is broadcasting on @YouNow {broadcastLink}"],"NextBroadcastToViewPercent":80,"MaxTrendingDisplayed":14,"MaxTopRankedDisplayed":15,"MaxNewBroadcastersDisplayed":50,"AdvanceNotificationCooldown":120,"UseDevUA":false,"UseShardingPresenceChannel":"SHARD_PRESENCE_CHANNEL","TMDomain":"images1.younow.com","TMEnabled":true,"TMOrgId":"7jnw4jh4","PusherDedicatedAppKey":"d5b7447226fc2cd78dbb","EULAUrl":"https:\/\/cdn.younow.com\/eula.php","FAQUrl":"https:\/\/younow.zendesk.com\/hc\/en-us","PrivacyUrl":"https:\/\/cdn.younow.com\/privacy.php","SupportUrl":"http:\/\/support.younow.com","PartnerAgreementUrl":"https:\/\/cdn.younow.com\/partner\/agreement.php","PartnerGuideUrl":"https:\/\/cdn.younow.com\/partner\/guidelines.html","PartnerTermsUrl":"https:\/\/cdn.younow.com\/partner\/dmca.html","TermsUrl":"https:\/\/cdn.younow.com\/terms.php","forceEULA":true,"policyFormsBaseUrl":"https:\/\/younow.github.io\/policy","policyPrivacyUrl":"privacy","policyTermsUrl":"terms","policyRulesUrl":"rules","policyTrustUrl":"trust","staticURLs":["jobs","about","press","partners","policy","info","app"],"fbAppId":"171373592926306","JS_VERSION":"4.36","JS_VERSION_MOBILE":"1.018","JS_VERSION_CORE":"1.079","GOOGLE_ANALYTICS_KEY":"UA-24148895-1","JW_PLAYER_KEY":"gyoz1D2yoy+GG57wtwrgni10vNZ0+43mBkBYhw==","GOOGLE_PLUS_CLIENT_ID":"619368150599.apps.googleusercontent.com","FLASH_VER_APPEND":"49.001","loginGate":"soft","isBranchEnabled":false,"isYozioEnabled":true,"isJamppEnabled":true,"NoPusherOnChannelIOS":false,"NoPusherOnChannelAndroid":false,"NoPusherOnChannelWeb":false,"ONESIGNAL_APP_ID":"a675082d-1834-4acc-8df7-bc418ecaa293","ONESIGNAL_SAFARI_ID":"web.onesignal.auto.0f5ba526-5606-4a7b-90fa-69fc66b30a70","PARTNER_STICKER_GIFT_ID":101,"PromoteOtherTWTemplatesMobile":["\ud83d\udd34 LIVE - {twitterHandle} is broadcasting on @YouNow {broadcastLink}"],"MomentsOtherTWTemplatesMobile":["\ud83d\udd34 LIVE - {twitterHandle} is broadcasting on @YouNow"],"ViewerEncouragePrompts":["Chat with {firstName} and make a new friend!","Say hi to {firstName} right here!","Ask {firstName} a question","Tell {firstName} what's on your mind","Say something to {firstName}","Let {firstName} know you are listening","Spark a conversation with {firstName}!","Get to know {firstName} and chat!","Tap here to start chatting with {firstName}","Say what's up to {firstName}!","Show some love to {firstName}!"],"ViewerEncourageMaxViewers":5,"BroadcastEndQueueDistribution":"50,25,10,4.5,4,3,2,1.5,1","showVoteCostLabels":1,"CommentThresholdCost":"320,10,3,1.5","MinFriendsToBroadcast":0,"OutroTime":3,"VotingCostsCoins":3,"firstCostLikeVote":"0","mobileReportErrors":true,"useYounowLogo":true,"BroadcastCountdown":5,"MobileMaxBitrate":600000,"MobileFPS":15,"MobileKFInterval":30,"MobileVideoSize":"592x444","MobileMaxBitrate3G":200000,"MobileFPS3G":15,"MobileKFInterval3G":30,"MobileVideoSize3G":"592x444","DisconnectGraceTimeout":30,"DefaultLocale":"en","Locales":{"me":{"name":"Arabic","loc":["ar"]},"en":{"name":"English","loc":[]},"de":{"name":"German","loc":["de"]},"pt":{"name":"Portuguese","loc":["pt"]},"es":{"name":"Spanish","loc":["es","ca"]},"tr":{"name":"Turkish","loc":["tr","az","kk"]},"ww":{"name":"Worldwide","loc":[]}},"LocaleFilterQueues":false,"LocaleFilterChat":true,"OnBroadcastPlayPolling":1,"OnBroadcastPlayData":1,"PartnerFlowWeb":true,"PartnerFlowIOS":true,"PartnerFlowAndroid":true,"PeopleSearchAppId":"QZ0XCGUBGQ","PeopleSearchApiKey":"7f270d4586d986ef69fb5bab5ecd7f741b5cb3f7042881112ed46c97b5e8404a","PeopleSearchSecurityTags":"(public)","PeopleSearchIndex":"people_search_live","AgeGateLocales":"de","PingInterval":60,"ageSegmentsUA":[0,18,21],"BTMerchantId":"6k8v8xm565v4x5c4","BTEnv":"production","BTKountId":"600540","PlayDataBaseUrl":"https:\/\/playdata.younow.com\/live\/","PlayDataOnS3Enabled":true,"UseBroadcastThumbs":true,"BadgeBaseUrl":"https:\/\/ynassets.younow.com\/subscriptions\/live","GuestSnapshotsBaseUrl":"https:\/\/ynassets.younow.com\/guestsnapshots\/live","SelfieBaseUrl":"https:\/\/ynassets.younow.com\/selfies\/live\/","SelfieFramerate":250,"SelfiePusherDelay":2000,"YounowRobot":"https:\/\/cdn.younow.com\/images\/robot.gif","PromoBannersPath":"https:\/\/ynassets.younow.com\/promobanners\/live","AllowMomentsDeletionByPartners":0,"RefreshSessionTimeoutHours":168,"RefreshSocialIntervalHours":72,"DisableLogoForUsersBelow":"1","DisableLogoForBroadcastersBelow":"1","featuredTags":{"en":[{"tag":"musicians","color":"f0c330","icon":"00B5"},{"tag":"dance","color":"39ca74","icon":"2202"},{"tag":"singing","color":"34ccbf","icon":"03C0"},{"tag":"art","color":"3a99d8","icon":"00E7"},{"tag":"lgbt","color":"ffaf40","icon":"00AC"},{"tag":"hiphop","color":"ff5967","icon":"02C6"},{"tag":"dj","color":"9a5cb4","icon":"00B4"},{"tag":"gaming","color":"259aca","icon":"02D9"},{"tag":"humor","color":"ff794c","icon":"02DA"},{"tag":"alternative","color":"93d258","icon":"222B"},{"tag":"parents","color":"f279ac","icon":"02DC"},{"tag":"pets","color":"6aecaa","icon":"00A5"},{"tag":"cooking","color":"de9b0c","icon":"2211"},{"tag":"beauty","color":"be5eb6","icon":"0153"},{"tag":"advice","color":"0b6ccd","icon":"2020"}]},"topicsEnabledForExisting":false,"topicBaseUrl":"https:\/\/cdn.younow.com\/images\/public\/topics\/explore_thumb_","PayPalIncontextUrl":"https:\/\/www.paypal.com\/cgi-bin\/webscr?cmd=_express-checkout&token=","isNewRelicEnabled":false,"apiMap":{"DNS":{"DEFAULT":"https:\/\/api.younow.com","CDN":"https:\/\/cdn.younow.com","YNASSETS":"https:\/\/ynassets.younow.com","PLAYDATA":"https:\/\/playdata.younow.com","TRACK":"https:\/\/data.younow.com","ZENDESK":"https:\/\/younow.zendesk.com","HLS":"https:\/\/hls.younow.com"},"BROADCAST_ADD":{"DNS":"DEFAULT","URL":"\/php\/api\/broadcast\/add"},"BROADCAST_AUDIENCE":{"DNS":"DEFAULT","URL":"\/php\/api\/broadcast\/audience"},"BROADCAST_AUDIENCE_CDN":{"DNS":"CDN","URL":"\/php\/api\/broadcast\/audience"},"BROADCAST_AUTH":{"DNS":"DEFAULT","URL":"\/php\/api\/broadcast\/auth"},"BROADCAST_CHAT":{"DNS":"DEFAULT","URL":"\/php\/api\/broadcast\/chat"},"BROADCAST_DATA":{"DNS":"CDN","URL":"\/php\/api\/broadcast\/data"},"BROADCAST_DOWNLOAD":{"DNS":"DEFAULT","URL":"\/php\/api\/broadcast\/download"},"BROADCAST_DROP":{"DNS":"DEFAULT","URL":"\/php\/api\/broadcast\/drop"},"BROADCAST_FAN_SUPPORTERS":{"DNS":"DEFAULT","URL":"\/php\/api\/broadcast\/fanSupporters"},"BROADCAST_GET_SUPPORTER":{"DNS":"DEFAULT","URL":"\/broadcast\/getSupporter"},"BROADCAST_GIFT":{"DNS":"DEFAULT","URL":"\/php\/api\/broadcast\/gift"},"BROADCAST_INFO":{"DNS":"DEFAULT","URL":"\/php\/api\/broadcast\/info"},"BROADCAST_INIT":{"DNS":"DEFAULT","URL":"\/php\/api\/broadcast\/init"},"BROADCAST_LIKE":{"DNS":"DEFAULT","URL":"\/php\/api\/broadcast\/like"},"BROADCAST_RECONNECT":{"DNS":"DEFAULT","URL":"\/php\/api\/broadcast\/reconnect"},"BROADCAST_SET_CHAT_MODE":{"DNS":"DEFAULT","URL":"\/php\/api\/broadcast\/setChatMode"},"BROADCAST_SHARE":{"DNS":"DEFAULT","URL":"\/php\/api\/broadcast\/share"},"BROADCAST_THANK_SUPPORTERS":{"DNS":"DEFAULT","URL":"\/php\/api\/broadcast\/thankSupporters"},"BROADCAST_THUMB":{"DNS":"YNASSETS","URL":"\/broadcast\/live"},"BROADCAST_THUMB_DYNAMIC":{"DNS":"YNASSETS","URL":"\/broadcastdynamic\/live"},"BROADCAST_UPLOAD_THUMB":{"DNS":"DEFAULT","URL":"\/php\/api\/broadcast\/uploadThumb"},"BROADCAST_USER_DATA":{"DNS":"DEFAULT","URL":"\/php\/api\/broadcast\/userData"},"BROADCAST_VIDEO_PATH":{"DNS":"CDN","URL":"\/php\/api\/broadcast\/videoPath"},"BROADCAST_REWIND":{"DNS":"DEFAULT","URL":"\/php\/api\/broadcast\/rewind"},"BROADCAST_SUPERMESSAGE":{"DNS":"DEFAULT","URL":"\/php\/api\/broadcast\/superMessage"},"CHANNEL_AWS_TOKEN":{"DNS":"DEFAULT","URL":"\/php\/api\/channel\/getAwsToken"},"CHANNEL_CANCEL_SUBSCRIPTION":{"DNS":"DEFAULT","URL":"\/php\/api\/channel\/cancelSubscription"},"CHANNEL_EDIT_BIO":{"DNS":"DEFAULT","URL":"\/php\/api\/channel\/editBio"},"CHANNEL_FAN":{"DNS":"DEFAULT","URL":"\/php\/api\/channel\/fan"},"CHANNEL_FEATURED_TAGS":{"DNS":"DEFAULT","URL":"\/php\/api\/channel\/featuredTags"},"CHANNEL_FOLLOW":{"DNS":"DEFAULT","URL":"\/php\/api\/channel\/follow"},"CHANNEL_COVER":{"DNS":"YNASSETS","URL":"\/cover\/live"},"CHANNEL_FANS":{"DNS":"DEFAULT","URL":"\/php\/api\/channel\/getFans"},"CHANNEL_FANS_CDN":{"DNS":"CDN","URL":"\/php\/api\/channel\/getFans"},"CHANNEL_FANSOF":{"DNS":"DEFAULT","URL":"\/php\/api\/channel\/getFansOf"},"CHANNEL_FANSOF_CDN":{"DNS":"CDN","URL":"\/php\/api\/channel\/getFansOf"},"CHANNEL_IMAGE":{"DNS":"YNASSETS","URL":"\/user\/live"},"CHANNEL_INFO":{"DNS":"DEFAULT","URL":"\/php\/api\/channel\/getInfo"},"CHANNEL_INFO_CDN":{"DNS":"CDN","URL":"\/php\/api\/channel\/getInfo"},"CHANNEL_LOCATION_ONLINE_FANS":{"DNS":"DEFAULT","URL":"\/php\/api\/channel\/getLocationOnlineFans"},"CHANNEL_LOCATION_ONLINE_FANS_OF":{"DNS":"DEFAULT","URL":"\/php\/api\/channel\/getLocationOnlineFansOf"},"CHANNEL_NOTIFICATIONS":{"DNS":"DEFAULT","URL":"\/php\/api\/channel\/getNotifications"},"CHANNEL_NOTIFICATION_SETTINGS":{"DNS":"DEFAULT","URL":"\/php\/api\/channel\/getNotificationSettings"},"CHANNEL_ONLINE_FANS":{"DNS":"CDN","URL":"\/php\/api\/channel\/getOnlineFans"},"CHANNEL_SUBSCRIBER_OF":{"DNS":"DEFAULT","URL":"\/php\/api\/channel\/getSubscriberOf"},"CHANNEL_SUBSCRIBER_OF_CDN":{"DNS":"CDN","URL":"\/php\/api\/channel\/getSubscriberOf"},"CHANNEL_SUBSCRIBERS":{"DNS":"DEFAULT","URL":"\/php\/api\/channel\/getSubscribers"},"CHANNEL_SUBSCRIBERS_CDN":{"DNS":"CDN","URL":"\/php\/api\/channel\/getSubscribers"},"CHANNEL_TOP_PAID_FANS":{"DNS":"CDN","URL":"\/php\/api\/channel\/getTopPaidFans"},"CHANNEL_USER_OPTIONS":{"DNS":"DEFAULT","URL":"\/php\/api\/channel\/getUserOptions"},"CHANNEL_IS_BLOCKED":{"DNS":"DEFAULT","URL":"\/php\/api\/channel\/isBlocked"},"CHANNEL_IS_FAN":{"DNS":"DEFAULT","URL":"\/php\/api\/channel\/isFan"},"CHANNEL_IS_FAN_OF":{"DNS":"DEFAULT","URL":"\/php\/api\/channel\/isFanOf"},"CHANNEL_IS_FOLLOW":{"DNS":"DEFAULT","URL":"\/php\/api\/channel\/isFollow"},"CHANNEL_IS_SUBSCRIBER_OF":{"DNS":"DEFAULT","URL":"\/php\/api\/channel\/isSubscriberOf"},"CHANNEL_RESET_STREAM_KEY":{"DNS":"DEFAULT","URL":"\/php\/api\/channel\/resetStreamKey"},"CHANNEL_SETTINGS":{"DNS":"DEFAULT","URL":"\/php\/api\/channel\/settings"},"CHANNEL_SHARE_URL":{"DNS":"DEFAULT","URL":"\/php\/api\/channel\/shareUrl"},"CHANNEL_SUBSCRIPTIONS":{"DNS":"DEFAULT","URL":"\/php\/api\/channel\/subscriptions"},"CHANNEL_UNFAN":{"DNS":"DEFAULT","URL":"\/php\/api\/channel\/unFan"},"CHANNEL_UPDATE_COVER":{"DNS":"DEFAULT","URL":"\/php\/api\/channel\/updateCover"},"CHANNEL_UPDATE_EDITORS_PICK":{"DNS":"DEFAULT","URL":"\/php\/api\/channel\/updateEditorsPick"},"CHANNEL_UPDATE_FANSHIP_MODE":{"DNS":"DEFAULT","URL":"\/php\/api\/channel\/updateFanshipMode"},"CHANNEL_UPDATE_FEATURED_TAGS":{"DNS":"DEFAULT","URL":"\/php\/api\/channel\/updateFeaturedTags"},"CHANNEL_UPDATE_NOTIFICATION_SETTINGS":{"DNS":"DEFAULT","URL":"\/php\/api\/channel\/updateNotificationSettings"},"CHANNEL_UPDATE_SETTINGS":{"DNS":"DEFAULT","URL":"\/php\/api\/channel\/updateSettings"},"CHANNEL_UPDATE_THUMB":{"DNS":"DEFAULT","URL":"\/php\/api\/channel\/updateThumb"},"CHANNEL_UPDATE_UI_LANGUAGE":{"DNS":"DEFAULT","URL":"\/php\/api\/channel\/updateUILanguage"},"CHANNEL_UPDATE_USER_OPTION":{"DNS":"DEFAULT","URL":"\/php\/api\/channel\/updateUserOption"},"CHANNEL_YOUTUBE_LIVE_ENABLED":{"DNS":"DEFAULT","URL":"\/php\/api\/channel\/youtubeLiveEnabled"},"CHANNEL_VIP_CONFIRM_MAIL":{"DNS":"DEFAULT","URL":"\/php\/api\/channel\/vipConfirmMail"},"CHANNEL_PARTNER_EARNINGS_STATS":{"DNS":"DEFAULT","URL":"\/php\/api\/channel\/partnerEarningsStats"},"CHANNEL_PARTNER_BROADCASTS_DATA":{"DNS":"DEFAULT","URL":"\/php\/api\/channel\/partnerBroadcastsData"},"CHANNEL_PARTNER_SUPPORTERS":{"DNS":"DEFAULT","URL":"\/php\/api\/channel\/partnerSupporters"},"CHANNEL_ACCEPT_AGREEMENT":{"DNS":"DEFAULT","URL":"\/php\/api\/channel\/acceptAgreement"},"CHANNEL_FAN_ON_BOARDING":{"DNS":"DEFAULT","URL":"\/php\/api\/channel\/fanOnBoarding"},"GUEST_CANCEL":{"DNS":"DEFAULT","URL":"\/php\/api\/guest\/cancel"},"GUEST_DECLINE":{"DNS":"DEFAULT","URL":"\/php\/api\/guest\/decline"},"GUEST_END":{"DNS":"DEFAULT","URL":"\/php\/api\/guest\/end"},"GUEST_INVITE":{"DNS":"DEFAULT","URL":"\/php\/api\/guest\/invite"},"GUEST_ISINVITABLE":{"DNS":"DEFAULT","URL":"\/php\/api\/guest\/isinvitable"},"GUEST_JOIN":{"DNS":"DEFAULT","URL":"\/php\/api\/guest\/join"},"GUEST_LIST":{"DNS":"DEFAULT","URL":"\/php\/api\/guest\/list"},"GUEST_LIST_CDN":{"DNS":"CDN","URL":"\/php\/api\/guest\/list"},"GUEST_OPTIN":{"DNS":"DEFAULT","URL":"\/php\/api\/guest\/optin"},"GUEST_OPTOUT":{"DNS":"DEFAULT","URL":"\/php\/api\/guest\/optout"},"GUEST_RANDOM":{"DNS":"DEFAULT","URL":"\/php\/api\/guest\/random"},"IMAGE_SELFIE":{"DNS":"YNASSETS","URL":"\/selfies\/live"},"IMAGE_EXPLORE_THUMB":{"DNS":"CDN","URL":"\/images\/public\/topics"},"IMAGE_SUBSCRIPTION_BADGE":{"DNS":"YNASSETS","URL":"\/subscriptions\/live"},"IMAGE_GIFTS_GOODIES":{"DNS":"YNASSETS","URL":"\/gifts\/live"},"IMAGE_GUEST_SNAPSHOTS":{"DNS":"YNASSETS","URL":"\/guestsnapshots\/live"},"PAYPAL_RETURN":{"DNS":"DEFAULT","URL":"\/api\/paypal\/paypalReturn.php"},"POST_CREATE":{"DNS":"DEFAULT","URL":"\/php\/api\/post\/create"},"POST_DELETE":{"DNS":"DEFAULT","URL":"\/php\/api\/post\/delete"},"POST_GET":{"DNS":"DEFAULT","URL":"\/php\/api\/post\/get"},"POST_BROADCASTS":{"DNS":"CDN","URL":"\/php\/api\/post\/getBroadcasts"},"POST_COMMENTS":{"DNS":"DEFAULT","URL":"\/php\/api\/post\/getComments"},"POST_MEDIA":{"DNS":"CDN","URL":"\/php\/api\/post\/getMedia"},"POST_LIKE":{"DNS":"DEFAULT","URL":"\/php\/api\/post\/like"},"POST_PIN":{"DNS":"DEFAULT","URL":"\/php\/api\/post\/pin"},"POST_UNLIKE":{"DNS":"DEFAULT","URL":"\/php\/api\/post\/unlike"},"POST_UNPIN":{"DNS":"DEFAULT","URL":"\/php\/api\/post\/unpin"},"RECO_ANON":{"DNS":"CDN","URL":"\/php\/api\/reco\/anon"},"RECO_IGNORE":{"DNS":"DEFAULT","URL":"\/php\/api\/reco\/ignore"},"RECO_LOGGED_IN":{"DNS":"DEFAULT","URL":"\/php\/api\/reco\/loggedIn"},"RECO_SUGGESTED_USERS":{"DNS":"DEFAULT","URL":"\/php\/api\/reco\/broadcasters"},"RECO_SUGGESTED_USERS_ANON":{"DNS":"CDN","URL":"\/php\/api\/reco\/broadcastersAnon"},"RECO_PROMOBANNER":{"DNS":"CDN","URL":"\/php\/api\/reco\/promobanner"},"RECO_SUGGESTED_MOMENTS_ANON":{"DNS":"CDN","URL":"\/php\/api\/reco\/momentsAnon"},"SELFIE_ANNOUNCE":{"DNS":"DEFAULT","URL":"\/php\/api\/selfie\/announce"},"SELFIE_CLEAR":{"DNS":"DEFAULT","URL":"\/php\/api\/selfie\/clear"},"SELFIE_QUEUE":{"DNS":"DEFAULT","URL":"\/php\/api\/selfie\/queue"},"SELFIE_UPLOAD":{"DNS":"DEFAULT","URL":"\/php\/api\/selfie\/upload"},"STORE_BUY":{"DNS":"DEFAULT","URL":"\/php\/api\/store\/buy"},"STORE_CHANGE_SUBSCRIPTION_PAYMENT":{"DNS":"DEFAULT","URL":"\/php\/api\/store\/changeSubscriptionPayment"},"STORE_GOODIE":{"DNS":"DEFAULT","URL":"\/php\/api\/store\/goodie"},"STORE_GOODIES":{"DNS":"CDN","URL":"\/php\/api\/store\/goodies"},"STORE_PAYEE_PAYABLE":{"DNS":"DEFAULT","URL":"\/php\/api\/store\/payeePayable"},"STORE_PRODUCTS":{"DNS":"CDN","URL":"\/php\/api\/store\/products"},"STORE_PURCHASE_TOKEN":{"DNS":"DEFAULT","URL":"\/php\/api\/store\/purchaseToken"},"STORE_SET_STATE":{"DNS":"DEFAULT","URL":"\/php\/api\/store\/setState"},"STORE_SUBSCRIPTION_PRODUCTS":{"DNS":"CDN","URL":"\/php\/api\/store\/subscriptionProducts"},"STORE_TIPALTI_IFRAME_SRC":{"DNS":"DEFAULT","URL":"\/php\/api\/store\/tipaltiIframeSrc"},"STORE_TIPALTI_PAYEE_DETAILS_CHANGED":{"DNS":"DEFAULT","URL":"\/php\/api\/store\/tipaltiPayeeDetailsChanged"},"STORE_VERIFY_CREDIT_CARD":{"DNS":"DEFAULT","URL":"\/php\/api\/store\/verifyCreditCard"},"STORE_BUY_PRE_CHECK":{"DNS":"DEFAULT","URL":"\/php\/api\/store\/buyPreCheck"},"URL_EULA":{"DNS":"CDN","URL":"\/terms.php"},"URL_FAQ":{"DNS":"ZENDESK","URL":"\/hc\/en-us"},"URL_PARTNER_AGREEMENT":{"DNS":"CDN","URL":"\/partner\/agreement.php"},"URL_PARTNER_GUIDELINES":{"DNS":"CDN","URL":"\/partner\/agreement.php"},"URL_PARTNER_DMCA":{"DNS":"CDN","URL":"\/partner\/dmca.html"},"URL_TERMS":{"DNS":"CDN","URL":"\/terms.php"},"URL_POLICY":{"DNS":"CDN","URL":"\/policy"},"YOUNOW_CONFIG":{"DNS":"CDN","URL":"\/php\/api\/younow\/config"},"YOUNOW_CONFIG_CLOUD":{"DNS":"YNASSETS","URL":"\/clients\/live\/config.json"},"YOUNOW_CONNECT":{"DNS":"DEFAULT","URL":"\/php\/api\/younow\/connect"},"YOUNOW_DASHBOARD":{"DNS":"CDN","URL":"\/php\/api\/younow\/dashboard"},"YOUNOW_DEVICE_CHANNEL":{"DNS":"DEFAULT","URL":"\/php\/api\/younow\/deviceChannel"},"YOUNOW_FEATURED":{"DNS":"DEFAULT","URL":"\/php\/api\/younow\/featured"},"YOUNOW_FEATURED_ON_TOPIC_USERS":{"DNS":"CDN","URL":"\/php\/api\/younow\/featuredOnTopicUsers"},"YOUNOW_ME":{"DNS":"DEFAULT","URL":"\/php\/api\/younow\/me"},"YOUNOW_LOGIN":{"DNS":"DEFAULT","URL":"\/php\/api\/younow\/login"},"YOUNOW_LOGOUT":{"DNS":"DEFAULT","URL":"\/php\/api\/younow\/logout"},"YOUNOW_NOTIFICATIONS":{"DNS":"DEFAULT","URL":"\/php\/api\/younow\/notificationCount"},"YOUNOW_ON_BOARDING":{"DNS":"CDN","URL":"\/php\/api\/younow\/onBoarding"},"YOUNOW_ON_BOARDING_VIP_USERS":{"DNS":"DEFAULT","URL":"\/php\/api\/younow\/onBoardingVipUsers"},"YOUNOW_MCN_CONTENT_CREATOR":{"DNS":"CDN","URL":"\/php\/api\/younow\/mcnContentCreator"},"YOUNOW_P2P_LIST":{"DNS":"DEFAULT","URL":"\/php\/api\/younow\/p2plist"},"YOUNOW_POPULAR_TAGS":{"DNS":"DEFAULT","URL":"\/php\/api\/younow\/popularTags"},"YOUNOW_PREMIERES":{"DNS":"DEFAULT","URL":"\/php\/api\/younow\/premieres"},"YOUNOW_QUEUE":{"DNS":"DEFAULT","URL":"\/php\/api\/younow\/queue"},"YOUNOW_REFERRAL_CODE":{"DNS":"CDN","URL":"\/php\/api\/younow\/referralCode"},"YOUNOW_REGISTER_DEVICE":{"DNS":"DEFAULT","URL":"\/php\/api\/younow\/registerDevice"},"YOUNOW_SEND_TO_PHONE":{"DNS":"DEFAULT","URL":"\/php\/api\/younow\/sendToPhone"},"YOUNOW_SEARCH":{"DNS":"DEFAULT","URL":"\/php\/api\/younow\/search"},"YOUNOW_TAGS":{"DNS":"DEFAULT","URL":"\/php\/api\/younow\/tags"},"YOUNOW_TOP_BROADCASTERS":{"DNS":"DEFAULT","URL":"\/php\/api\/younow\/topBroadcasters"},"YOUNOW_TRENDING_TAGS":{"DNS":"CDN","URL":"\/php\/api\/younow\/trendingTags"},"YOUNOW_TRENDING_USERS":{"DNS":"CDN","URL":"\/php\/api\/younow\/trendingUsers"},"YOUNOW_USER":{"DNS":"DEFAULT","URL":"\/php\/api\/younow\/user"},"YOUNOW_VIPS":{"DNS":"CDN","URL":"\/php\/api\/younow\/vips"},"YOUNOW_LB_TOP_BROADCASTERS":{"DNS":"CDN","URL":"\/php\/api\/younow\/topBroadcastersLeaderboard"},"YOUNOW_LB_TOP_CREATORS":{"DNS":"CDN","URL":"\/php\/api\/younow\/topCreatorsLeaderboard"},"YOUNOW_LB_EDITORS_CHOICE":{"DNS":"CDN","URL":"\/php\/api\/younow\/topEditorsLeaderboard"},"YOUNOW_LB_TOP_SPENDERS":{"DNS":"CDN","URL":"\/php\/api\/younow\/topSpendersLeaderboard"},"YOUNOW_TOP_LB_USERS":{"DNS":"CDN","URL":"\/php\/api\/younow\/topOverallLeaderboard"},"YOUNOW_LB_TRENDING_MOMENTS":{"DNS":"CDN","URL":"\/php\/api\/younow\/topTrendingMoments"},"DO_ADMIN_ACTION":{"DNS":"DEFAULT","URL":"\/php\/api\/doAdminAction"},"GET_SNAPSHOT":{"DNS":"CDN","URL":"\/php\/api\/getSnapshot"},"GET_USER_ACTIONS":{"DNS":"DEFAULT","URL":"\/php\/api\/getUserActions"},"INSTAGRAM_AUTH":{"DNS":"DEFAULT","URL":"\/instagramAuth.php"},"PARTNER_PAGE":{"DNS":"DEFAULT","URL":"\/partners"},"PARTNER_FORM":{"DNS":"DEFAULT","URL":"\/php\/api\/channel\/partnerForm"},"RECENTLY_BROADCASTED":{"DNS":"DEFAULT","URL":"\/recentlybroadcasted.php"},"TUMBLR_AUTH":{"DNS":"DEFAULT","URL":"\/tumblrAuth.php"},"TWITTER_LOGIN":{"DNS":"DEFAULT","URL":"\/twitterLogin.php"},"PUSHER_AUTH":{"DNS":"DEFAULT","URL":"\/api\/pusherAuth.php"},"PUSHER_AUTH_DEDICATED":{"DNS":"DEFAULT","URL":"\/api\/pusherAuthDedicated.php"},"SEND_ERROR_EVENT_MOBILE":{"DNS":"DEFAULT","URL":"\/php\/api\/sendErrorEventMobile"},"TRACKING":{"DNS":"TRACK","URL":""},"MOMENT_FEED":{"DNS":"DEFAULT","URL":"\/php\/api\/moment\/feed"},"MOMENT_LIKE":{"DNS":"DEFAULT","URL":"\/php\/api\/moment\/like"},"MOMENT_IS_LIKED":{"DNS":"DEFAULT","URL":"\/php\/api\/moment\/isLiked"},"MOMENT_CREATE":{"DNS":"DEFAULT","URL":"\/php\/api\/moment\/create"},"MOMENT_PROFILE":{"DNS":"CDN","URL":"\/php\/api\/moment\/profile"},"MOMENT_PLAYLIST":{"DNS":"HLS","URL":"\/momentsplaylists\/live"},"MOMENT_COLLECTION":{"DNS":"CDN","URL":"\/php\/api\/moment\/collection"},"MOMENT_VIEWED":{"DNS":"DEFAULT","URL":"\/php\/api\/moment\/viewed"},"MOMENT_HIDE":{"DNS":"DEFAULT","URL":"\/php\/api\/moment\/hide"},"MOMENT_COLLECTION_DELETE":{"DNS":"DEFAULT","URL":"\/php\/api\/moment\/collectionDelete"},"MOMENT_DELETE":{"DNS":"DEFAULT","URL":"\/php\/api\/moment\/delete"},"MOMENT_THUMB":{"DNS":"HLS","URL":"\/momentsthumbs\/live"},"MOMENT_FETCH":{"DNS":"CDN","URL":"\/php\/api\/moment\/fetch"},"MOMENT_LIKES":{"DNS":"CDN","URL":"\/php\/api\/moment\/likes"}},"ClientFlags":"{}"};
+
+			// global
+			if (!window.YouNow) {
+				window.YouNow = new Object();
+			}
+			// loading time
+			window.YouNow.loadingTime = new Object();
+			window.YouNow.loadingTime.startTime = Date.now();
+		</script>
+
+		<!-- Bugsnag -->
+		<script
+		  src="//d2wy8f7a9ursnm.cloudfront.net/bugsnag-2.min.js"
+		  data-apikey="003e30d1e70ac2ef12bc139fa3ff3720"
+		  data-appversion="4.36">
+		</script>
+
+
+		<!-- Google Analytics -->
+		<script type="https://www.google-analytics.com/analytics.js" id="ga-sdk"></script>
+		<script>
+		    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		</script>
+
+		<!-- FB Audience Pixel -->
+		<script>(function() {
+			var _fbq = window._fbq || (window._fbq = []);
+			if (!_fbq.loaded) {
+			var fbds = document.createElement('script');
+			fbds.async = true;
+			fbds.src = '//connect.facebook.net/en_US/fbds.js';
+			var s = document.getElementsByTagName('script')[0];
+			s.parentNode.insertBefore(fbds, s);
+			_fbq.loaded = true;
+			}
+			_fbq.push(['addPixelId', '852093771527903']);
+			})();
+			window._fbq = window._fbq || [];
+			window._fbq.push(['track', 'PixelInitialized', {}]);
+		</script>
+		<noscript><img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/tr?id=852093771527903&amp;ev=PixelInitialized" /></noscript>
+
+		<!-- Pusher -->
+		<script src="//js.pusher.com/3.1/pusher.min.js"></script>
+
+		<!-- BEGIN DESKTOP -->
+			<!-- SWFObject -->
+			<script type="text/javascript" src="https://cdn.younow.com/js/swfobject_2_2.js"></script>
+			<!-- stripe -->
+			<!-- <script type="text/javascript" src="https://js.stripe.com/v2/"></script> -->
+			<!-- <script type="text/javascript"> -->
+			  <!-- Stripe.setPublishableKey('pk_test_MX0j4pM4uNWQJxH02uINMXLE'); -->
+			<!-- </script> -->
+			<!-- Google+/Youtube -->
+			<script src="https://apis.google.com/js/client:platform.js?onload=googleAsyncInit"></script>
+			<!-- deferred loading of scripts -->
+			<script type="text/javascript">
+				function downloadJSAtOnload() {
+					var deferredJs = ['https://js.braintreegateway.com/v2/braintree.js', 'https://js.braintreegateway.com/v1/braintree-data.js'],
+					i = 0,
+					element;
+
+					for(i; i<deferredJs.length;i++) {
+						element = document.createElement("script");
+						element.src = deferredJs[i];
+						document.body.appendChild(element);
+					}
+				}
+				if (window.addEventListener) {
+					window.addEventListener("load", downloadJSAtOnload, false);
+				}
+				else if (window.attachEvent) {
+					window.attachEvent("onload", downloadJSAtOnload);
+				}
+				else {
+					window.onload = downloadJSAtOnload;
+				}
+			</script>
+
+			<!-- Facebook -->
+			<script>
+			  (function(d, s, id){
+				 var js, fjs = d.getElementsByTagName(s)[0];
+				 if (d.getElementById(id)) {
+					return;
+				 }
+				 js = d.createElement(s); js.id = id;
+				 js.src = "//connect.facebook.net/en_US/sdk.js";
+				 fjs.parentNode.insertBefore(js, fjs);
+			   }(document, 'script', 'facebook-jssdk'));
+			</script>
+			<!-- Twemoji -->
+			<script src="https://twemoji.maxcdn.com/twemoji.min.js"></script>
+			<!-- OneSignal -->
+			<script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async></script>
+			<link rel="manifest" href="/manifest.json">
+			<script>
+			    var OneSignal = OneSignal || [];
+			</script>
+
+			<!-- BEGIN LIVEJS -->
+				<!-- vendor js -->
+				<script type="text/javascript" src="%BUILDJS%"></script>
+
+				<!-- compiled CSS -->
+				<link rel="stylesheet" type="text/css" href="https://cdn.younow.com/angularjsapp/build/app/younow.css?ver=4.36" />
+
+				<!-- compiled core js -->
+				<!--<script type="text/javascript" src="https://cdn.younow.com/angularjsapp/build/core/core.js?ver=1.079"></script>
+				<script type="text/javascript" src="https://cdn.younow.com/angularjsapp/build/app/younow.js?ver=4.36"></script>-->
+			<!-- END LIVEJS -->
+
+			
+
+			
+		<!-- END DESKTOP -->
+
+		
+
+
+	</head>
+	<body>
+		<div id="app" data-ui-view></div>
+		<div id="fb-root"></div>
+	<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"491d28ec0d","applicationID":"9848711,9922067","transactionName":"Y1NTYUYEW0QCVExbWFoZZEddSlxZB1JAHEdcRg==","queueTime":0,"applicationTime":29,"atts":"TxRQFw4eSEo=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+
+	<!-- HaloGraph -->
+	<script type="text/javascript">
+		// get session
+		var _ht_session_id    = null; // set this to a numeric session ID that your system generates
+		try {
+			_ht_session_id = window.localStorage.getItem('_ht_session_id');
+		} catch (error) {
+			_ht_session_id = readCookie('_ht_session_id');
+		}
+		// set session
+		if (!_ht_session_id) {
+			_ht_session_id = Math.floor( Math.random() * 1000000000000 );
+			try {
+				window.localStorage.setItem('_ht_session_id', _ht_session_id);
+			} catch (error) {
+				createCookie('_ht_session_id', _ht_session_id, 2650000);
+			}
+		}
+		// set user
+			//_ht['_ht_uid'] = null; // set later, in session-service.js
+		// init
+		var _ht_client_id     = "BTYN"; // your assigned client ID
+		var _ht_client_js_key = "KUdKmOjuNu0"; // your assigned JavaScript API key
+		var _ht = _ht || {};
+		_ht['_ht_session_id'] = _ht_session_id;
+		_ht['_ht_client_id'] = _ht_client_id;
+		_ht['_ht_client_js_key'] = _ht_client_js_key;
+		(function() {
+		  function loadHt() {
+		   var h = document.createElement('script');
+		    h.type = 'text/javascript';
+		    h.async = true;
+		    h.src = 'https://www.halograph.com/js/htcat.js';
+		    var a = document.getElementsByTagName('script')[0];
+		    a.parentNode.insertBefore(h, a);
+		  }
+		  if (window.attachEvent) {
+		    window.attachEvent('onload', loadHt);
+		  } else {
+		    window.addEventListener('load', loadHt, false);
+		  }
+		})();
+	</script>
+
+	<script defer>
+	(function(e,c,a,g,f){function d(){var b=c.createElement("script");b.async=!0;
+	b.src="//radar.cedexis.com/1/21253/radar.js";c.body.appendChild(b)}
+	(function(){for(var b=[/\bMSIE (5|6)/i],a=b.length;a--;)if(b[a]
+	.test(navigator.userAgent))return!1;return!0})()
+	&&("complete"!==c.readyState?(a=e[a])?a(f,d,!1):(a=e[g])&&a("on"+f,d):d())})
+	(window,document,"addEventListener","attachEvent","load");
+	</script>
+</html>
